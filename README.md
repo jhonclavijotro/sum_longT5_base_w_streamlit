@@ -123,6 +123,7 @@ El modelo fue diseñado en una máquina linux, por esta razón, el repositorio c
 
 - Uso: Luego de haber ejecutado el archivo .sh, se abrirá una página en el navegador por defecto para archivos html y se podrá cargar el texto y realizar los respectivos resumenes.
 
+[LongT5: Efficient Text-To-Text Transformer for Long Sequences](https://aclanthology.org/2022.findings-naacl.55.pdf)
 
 ```
 @inproceedings{guo2022longt5,
@@ -135,6 +136,7 @@ El modelo fue diseñado en una máquina linux, por esta razón, el repositorio c
 }
 ```
 
+[mLongT5: A Multilingual and Efficient Text-To-Text Transformer for Longer Sequences](https://arxiv.org/abs/2305.11129)
 
 ```
 @misc{uthus2023mlongt5,
