@@ -19,7 +19,7 @@ El siguiente documento, tiene como objetivo explicar la implementación de un tr
 
 2. Introducción
 
-El proyecto se basa en la implementación de uno de los checkpoint preentrenados, resultado del artículo LongT5: Efficient Text-To-Text Transformer for Long Sequences 1. Este modelo se desarrolla como una posible solución a la limitante que tiene de por sí el modelo original T5, el cual, debido a su mecanismo de atención en el enconder (Self-attention) tiene una limitante en cuanto al tamaño de la entrada, ya que la matriz de atención crece de manera lineal con respecto al tamaño de la entrada. Este documento propone dos opciones (atención local y atención global transitoria), las cuales permiten escalar el modelo en cuanto a la entrada sin sacrificar el rendimiento del modelo original y sin agregar un número excesivo de parámetros nuevos.
+El proyecto se basa en la implementación de uno de los checkpoint preentrenados, resultado del artículo LongT5: Efficient Text-To-Text Transformer for Long Sequences. Este modelo se desarrolla como una posible solución a la limitante que tiene de por sí el modelo original T5, el cual, debido a su mecanismo de atención en el enconder (Self-attention) tiene una limitante en cuanto al tamaño de la entrada, ya que la matriz de atención crece de manera lineal con respecto al tamaño de la entrada. Este documento propone dos opciones (atención local y atención global transitoria), las cuales permiten escalar el modelo en cuanto a la entrada sin sacrificar el rendimiento del modelo original y sin agregar un número excesivo de parámetros nuevos.
 
 3. Marco teórico
 
@@ -41,7 +41,7 @@ Esta unificación permitió usar una misma arquitectura, los mismos hiperparáme
 
 3.3. Tokenización
 
-La tokenización que utiliza el modelo base T5 es SentencePiece 2, esta crea un vocabulario de unidades de sub palabras, dividiendo el texto en tokens de subpalabras.
+La tokenización que utiliza el modelo base T5 es SentencePiece, esta crea un vocabulario de unidades de sub palabras, dividiendo el texto en tokens de subpalabras.
 
 Por ejemplo, ”translate English to French: How are you?” será tokenizado en: [ ’translate’, ’English’, ’_to’, ’French’, ’:’, ’_How’, ’_are’, ’_you’, ’?’ ]
 
@@ -117,8 +117,27 @@ Para la implementación de la herramienta con la librería de python Streamlit, 
 
 El modelo fue diseñado en una máquina linux, por esta razón, el repositorio cuenta con un archivo .sh que permite la ejecución del aplicativo una vez se haya clonado el repositorio. Para la implementación de esta aplicación es necesario realizar los siguientes pasos:
 
-- Clonar repositorio: El repositorio se encuentra en la dirección del repositorio en github 3
+- Clonar repositorio: El repositorio se encuentra en la dirección del repositorio en github
 
 - Permisos de ejecución: Una vez clonado el repositorio, es necesario acceder a la carpeta contenedora y otorgar permisos de ejecución al archivo llamado iniciar.sh, este archivo lo que realiza es la creación de un entorno de python con los requerimientos necesarios para la implementación del modelo y lo ejecuta.
 
 - Uso: Luego de haber ejecutado el archivo .sh, se abrirá una página en el navegador por defecto para archivos html y se podrá cargar el texto y realizar los respectivos resumenes.
+
+@inproceedings{guo2022longt5,
+    title = "{L}ong{T}5: {E}fficient Text-To-Text Transformer for Long Sequences",
+    author = "Mandy Guo and Joshua Ainslie and David Uthus and Santiago Onta{\~n}{\'o}n and Jianmo Ni and Yun-Hsuan Sung and Yinfei Yang",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2022",
+    year = "2022",
+    url = "https://aclanthology.org/2022.findings-naacl.55",
+    pages = "724--736",
+}
+
+@misc{uthus2023mlongt5,
+    title = "{mLongT5}: A Multilingual and Efficient Text-To-Text Transformer for Longer Sequences",
+    author = "David Uthus and Santiago Onta{\~n}{\'o}n and Joshua Ainslie and Mandy Guo",
+    year = "2023",
+    eprint = "2305.11129",
+    archivePrefix = "arXiv",
+    primaryClass = "cs.CL",
+    url = "https://arxiv.org/abs/2305.11129"
+}
