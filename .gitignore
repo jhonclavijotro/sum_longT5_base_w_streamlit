@@ -1,8 +1,1 @@
-docs/
-expo/
-proyecto/
-long_T5_fine_tuned/
-final_model_ready/
-.vscode/
-fine_tuning.py
-fine_tuning_2.py
+env/
